@@ -25,24 +25,22 @@
 <h4>Puertos troncales</h4>
 <p>Son enlaces capaces de transportar el tráfico de más de una VLAN y se suelen utilizar para interconectar dos switches o un switch/router. Puede ser un enlace físico o estar conformado por varios, en aquí la trama deberá transportar datos etiquetados.</p>
 <h3>Configuración de VLAN sin enlaces troncales</h3>
-<p>
-  Acceso al modo de administrador
+Acceso al modo de administrador
   ```
   Switch> enable
   ```
-  Accede al Modo de configuración global
+Accede al Modo de configuración global
   ```
   Switch#configure terminal
   ```
-  Cambia el nombre del dispositivo
+Cambia el nombre del dispositivo
   ```
   Switch(config)#hostname SW1
   ```
-  Se crea la vlan 10
+Se crea la vlan 10
   ```
   SW1(config)#vlan 10
   ```
-</p>
 <h2>Enrutamiento entre VLAN con Switches de Capa 3</h2>
 <h2>WLAN</h2>
 <h2>Seguridad LAN</h2>
