@@ -29,6 +29,9 @@ Acceso al modo de administrador
   ```
   Switch> enable
   ```
+  ```sh
+ composer install 
+```
 Accede al Modo de configuración global
   ```
   Switch#configure terminal
