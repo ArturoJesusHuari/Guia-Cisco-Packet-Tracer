@@ -25,25 +25,25 @@
 <h4>Puertos troncales</h4>
 <p>Son enlaces capaces de transportar el tráfico de más de una VLAN y se suelen utilizar para interconectar dos switches o un switch/router. Puede ser un enlace físico o estar conformado por varios, en aquí la trama deberá transportar datos etiquetados.</p>
 <h3>Configuración de VLAN sin enlaces troncales</h3>
-Acceso al modo de administrador
-  ```
-  Switch> enable
-  ```
-  ```sh
- composer install 
-```
-Accede al Modo de configuración global
-  ```
-  Switch#configure terminal
-  ```
-Cambia el nombre del dispositivo
-  ```
-  Switch(config)#hostname SW1
-  ```
-Se crea la vlan 10
-  ```
-  SW1(config)#vlan 10
-  ```
+<p>Acceso al modo de administrador <br>
+  <pre><code>Switch> enable</code></pre>
+  Accede al Modo de configuración global <br>
+  <pre><code>Switch#configure terminal</code></pre>
+  Cambia el nombre del dispositivo <br>
+  <pre><code>Switch(config)#hostname SW1</code></pre>
+  Se crea la VLAN 10 <br>
+  <pre><code>SW1(config)#vlan 10</code></pre> <br>
+  Se asigna un nombre a la VLAN<br>
+  <pre><code>SW1(config-vlan)#name VLAN10</code></pre> 
+  Salir, para terminar la configuración de la VLAN<br>
+  <pre><code>SW1(config-vlan)#exit</code></pre>
+  Selecionar los puertos que se asignaran a la VLAN<br>
+  <pre><code>SW1(config)#interface range fa0/10-15</code></pre> 
+  Las interfaces cambia al modo de acceso permanente. Luego,  Se asignan los puertos a la VLAN anteriormente creada y se termina la configuracion de los puertos. <br>
+  <pre><code>SW1(config-if-range)#switchport mode access
+SW1(config-if-range)#switchport access vlan 10
+SW1(config-if-range)#exit</code></pre>
+</p>
 <h2>Enrutamiento entre VLAN con Switches de Capa 3</h2>
 <h2>WLAN</h2>
 <h2>Seguridad LAN</h2>
