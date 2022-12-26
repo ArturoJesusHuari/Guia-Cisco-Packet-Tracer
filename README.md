@@ -1,9 +1,6 @@
 <h1>Script de comandos de packet tracer</h1>
 <h2>Enrutamiento VLAN</h2>
 <p>Las redes de área local virtuales o más conocidas como VLAN, es una tecnología de red que permite crear redes lógicas independientes dentro de la misma red física. El objetivo de usar VLAN en un entorno doméstico o profesional, es para segmentar adecuadamente la red y usar cada subred de una forma diferente.</p>
-<p align="center">
-  <image src="/src/VLAN.png" alt="VLAN en el simulador Packet Tracer">
-</p>
 <h3>Caracteristicas</h3>
 <ul>
   <li>Las VLAN permiten dividir la red en grupos con una agrupación o estructura jerárquica lógica en lugar de una física.</li>
@@ -25,6 +22,9 @@
 <h4>Puertos troncales</h4>
 <p>Son enlaces capaces de transportar el tráfico de más de una VLAN y se suelen utilizar para interconectar dos switches o un switch/router. Puede ser un enlace físico o estar conformado por varios, en aquí la trama deberá transportar datos etiquetados.</p>
 <h3>Configuración de VLAN sin enlaces troncales</h3>
+<p align="center">
+  <image src="/src/VLAN.png" alt="VLAN en el simulador Packet Tracer">
+</p>
 <p>Acceso al modo de administrador <br>
   <pre><code>Switch> enable</code></pre>
   Accede al Modo de configuración global <br>
@@ -43,6 +43,10 @@
   <pre><code>SW1(config-if-range)#switchport mode access
 SW1(config-if-range)#switchport access vlan 10
 SW1(config-if-range)#exit</code></pre>
+</p>
+<h3>Configuración de VLAN con enlaces troncales</h3>
+<p align="center">
+  <image src="/src/VLANt.png" alt="VLAN con enlaces troncales">
 </p>
 <h2>Enrutamiento entre VLAN con Switches de Capa 3</h2>
 <h2>WLAN</h2>
