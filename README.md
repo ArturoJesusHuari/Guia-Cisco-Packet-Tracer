@@ -324,9 +324,87 @@ R1(config)#exit</code></pre>
   <image src="/src/SSH2.png" alt="Seguridad LAN">
 </p>
 <h2>Seguridad VLAN</h2>
+<h3>Configuracion</h3>
+<p align="center">
+  <image src="/src/SV.png" alt="Seguridad LAN">
+</p>
+Configuramos las direcciones IP de los dispositivos
+<p align="center">
+  <image src="/src/SV1.png" alt="Seguridad LAN">
+</p>
+<h4>Configuracion del switch</h4>
 
+Switch>enable
+Switch#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 10
+Switch(config-vlan)#name VLAN10
+Switch(config-vlan)#exit
+Switch(config)#interface range fastEthernet 0/1-3
+// Se selecciona el puerto fa0/1-3
+Switch(config-if-range)#switchport access vlan 10
+//Asignamos los puertos a la vlan 10
+Switch(config-if-range)#switchport port-security
+// Se activa la seguridad del puerto
+Switch(config-if-range)#switchport port-security mac-address sticky
+// Asignamos la dirección mac del dispositivo que conectaremos al puerto
+Switch(config-if-range)#switchport port-security maximum 1
+// Solo se asignara una dirección mac a cada puerto
+Switch(config-if-range)#switchport port-security violation shutdown
+// En caso de una violación de seguridad, el puerto se apagara
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#exit
+
+Verificar que los puertos sean estáticos y que hayan sido correctamente asignados a su vlan.
+<p align="center">
+  <image src="/src/SV2.png" alt="Seguridad LAN">
+</p>
+<h4>Prueba de inviolabilidad</h4>
+<p align="center">
+  <image src="/src/SV3.png" alt="Seguridad LAN">
+</p>
 <h2>Seguridad WLAN</h2>
-
+Ingresamos un router.
+<p align="center">
+  <image src="/src/SW.png" alt="Seguridad LAN">
+</p>
+Configuramos su nombre por la interfaz
+<p align="center">
+  <image src="/src/SW2.png" alt="Seguridad LAN">
+</p>
+La opción de seguridad la dejamos deshabilitada, pues el filtrado mac reemplazara esta.
+<p align="center">
+  <image src="/src/SW3.png" alt="Seguridad LAN">
+</p>
+Ingresamos dos dispositivos y les colocamos las antenas.
+<p align="center">
+  <image src="/src/SW4.png" alt="Seguridad LAN">
+</p>
+<p align="center">
+  <image src="/src/SW5.png" alt="Seguridad LAN">
+</p>
+<p align="center">
+  <image src="/src/SW6.png" alt="Seguridad LAN">
+</p>
+Conectamos los dos dispositivos a la red.
+<p align="center">
+  <image src="/src/SW7.png" alt="Seguridad LAN">
+</p>
+Obtenemos las direcciones mac de los dispositivos.
+<p align="center">
+  <image src="/src/SW8.png" alt="Seguridad LAN">
+</p>
+<p align="center">
+  <image src="/src/SW9.png" alt="Seguridad LAN">
+</p>
+Configuramos el filtrado mac e ingresamos la dirección mac solo de la laptop.
+<p align="center">
+  <image src="/src/SW10.png" alt="Seguridad LAN">
+</p>
+Finalmente, la PC al no esta registrada dentro del filtro será desconectada.
+<p align="center">
+  <image src="/src/SW11.png" alt="Seguridad LAN">
+</p>
 <h2>Protocolo STP</h2>
 
 <h2>Seguridad AAA</h2>
