@@ -242,8 +242,93 @@ Dispositivo conectado
   <image src="/src/W17.png" alt="Red final">
 </p>
 <h2>Seguridad LAN</h2>
+<h3>Configuración de la seguridad</h3>
+<p align="center">
+  <image src="/src/SL.png" alt="Seguridad LAN">
+</p>
+Configurar las IP de las PC
+<p align="center">
+  <image src="/src/SL2.png" alt="Seguridad LAN">
+</p>
+<h4>Configuración del switch</h4>
+Acceso al modo de administrador <br>
+<pre><code>Switch> enable</code></pre>
+Accede al Modo de configuración global <br>
+<pre><code>Switch#configure terminal</code></pre>
+Se selecciona la interface que se desea configurar. <br>
+<pre><code>Switch(config)#interface fa0/1</code></pre>
+Se ingresa al modo acceso. <br>
+<pre><code>Switch(config-if)#switchport mode access</code></pre>
+Activa la seguridad del puerto. <br>
+<pre><code>Switch(config-if)#switchport port-security</code></pre>
+El número de dispositivos que se pueden conectar por este puerto, es de 1. <br>
+<pre><code>Switch(config-if)#switchport port-security maximum 1</code></pre>
+Se asigna la dirección mac del dispositivo que conectaremos al puerto. <br>
+<pre><code>Switch(config-if)#switchport port-security mac-address sticky</code></pre>
+En caso de una violacion de seguridad, el puerto se deshabilita. <br>
+<pre><code>Switch(config-if)#switchport port-security violation shutdown
+Switch(config-if)#exit</code></pre>
+El puerto es estatico. 
+<p align="center">
+  <image src="/src/SL3.png" alt="Seguridad LAN">
+</p>
+Prueba de "PC malisiosa".
+<p align="center">
+  <image src="/src/SL4.png" alt="Seguridad LAN">
+</p>
+<h2>SSH</h2>
+Secure Shell (SSH) es un protocolo seguro. Proporciona una conexión de administración segura (encriptada) a un dispositivo remoto. SSH reemplaza a las conexiones telnet para las conexiones de administración.
+<h3>Configuracion SSH</h3>
+<p align="center">
+  <image src="/src/SSH.png" alt="Seguridad LAN">
+</p>
+<h4>Configuración de router</h4>
+Acceso al modo de administrador <br>
+<pre><code>Router> enable</code></pre>
+Accede al Modo de configuración global <br>
+<pre><code>Router#configure terminal</code></pre>
+Se selecciona la interface que se desea configurar. <br>
+<pre><code>Switch(config)#interface fa0/1</code></pre>
+Se asigna la direccion IP. <br>
+<pre><code>Router(config-if)#ip address 192.168.1.2 255.255.255.0</code></pre>
+Se enciende el puerto <br>
+<pre><code>Router(config-if)#no shutdown
+Router(config-if)#exit</code></pre>
+El comando service password-encryption aplica un cifrado débil a todas las contraseñas sin cifrar. El comando enable secret usa un fuerte algoritmo MD5 para cifrar.<br>
+<pre><code>Router(config)#service password-encryption
+Router(config)#ip domain-name cisco.com</code></pre>
+Se asigna un nombre para el router <br>
+<pre><code>Router(config)#hostname R1</code></pre>
+Para crear una clave de encriptación. Genera las claves RSA con un tamaño de 1024 bits <br>
+<pre><code>R1(config)#crypto key generate rsa general-keys modulus 1024</code></pre>
+Configura el Tiempo de Espera esto es en Segundos. <br>
+<pre><code>R1(config)#ip ssh time-out 30</code></pre>
+Intentos validos. <br>
+<pre><code>R1(config)#ip ssh authentication-retries 3</code></pre>
+Usamos la versión 2, pues es más eficiente que la primera.
+<pre><code>R1(config)#ip ssh version 2</code></pre>
+Se asigna un usuario y contraseña para la autentificación. <br>
+<pre><code>R1(config)#username UNCP secret Sistemas</code></pre>
+Las líneas vty permiten el acceso a un dispositivo Cisco de forma remota. Se aplicara SSH a las 16 lineas de terminal. <br>
+<pre><code>R1(config)#line vty 0 15</code></pre>
+El comando login local en la configuración de línea habilita la base de datos local para la autenticación.<br>
+<pre><code>R1(config-line)#login local</code></pre>
+Configurar al menos una interface ethernet con conectividad IP para acceso via SSH. <br>
+<pre><code>R1(config-line)#transport input ssh
+R1(config-line)#exit</code></pre>
+Se configura una contraseña para la conexión de consola al modo de usuario. <br>
+<pre><code>R1(config)#enable secret Sistemas
+R1(config)#exit</code></pre>
+<h4>Sesion de SSH</h4>
+<p align="center">
+  <image src="/src/SSH2.png" alt="Seguridad LAN">
+</p>
 <h2>Seguridad VLAN</h2>
+
 <h2>Seguridad WLAN</h2>
+
 <h2>Protocolo STP</h2>
+
 <h2>Seguridad AAA</h2>
+
 <h2>Seguridad WAN</h2>
