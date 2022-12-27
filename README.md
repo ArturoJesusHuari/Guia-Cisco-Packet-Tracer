@@ -171,8 +171,76 @@ Switch_Core(config-if)#exit</code></pre>
 Finalmente, encender el puerto que funciona como enlace troncal y terminar la configuración.
 <pre><code>Switch_Core(config-if)#no shutdown
 Switch_Core(config-if)#end</code></pre>
-
 <h2>WLAN</h2>
+<p>La WLAN está formada por dispositivos que se conectan en un espacio geográfico reducido mediante ondas de radiofrecuencia. Este tipo de conexión permite que los usuarios tengan mayor movilidad en el espacio que están interconectados, asimismo, se mantiene un mejor orden ya que no hay necesidad del uso de cables. </p>
+<h3>Configuración de router inalambrico</h3>
+Para configurar el router, se necesita una PC que este conectada a este.
+<p align="center">
+  <image src="/src/W1.png" alt="Dispositivos ingresados">
+</p>
+Configurar el IP del PC. 
+<p align="center">
+  <image src="/src/W2.png" alt="Dispositivos ingresados">
+</p>
+Verificar conectividad 
+<p align="center">
+  <image src="/src/W3.png" alt="Dispositivos ingresados">
+</p>
+Ingresar al navegador: Web Browser, e ingresar en la barra de dirección, la IP del router.
+<p align="center">
+  <image src="/src/W4.png" alt="Dispositivos ingresados">
+</p>
+Ingresar con el Usuario: admin y Contraseña: admin
+<p align="center">
+  <image src="/src/W5.png" alt="Dispositivos ingresados">
+</p>
+<p align="center">
+  <image src="/src/W6.png" alt="Dispositivos ingresados">
+</p>
+Ingresamos a la pestaña Wireless
+<p align="center">
+  <image src="/src/W7.png" alt="Dispositivos ingresados">
+</p>
+Cambiamos Default por FIS_UNCP
+<p align="center">
+  <image src="/src/W8.png" alt="Dispositivos ingresados">
+</p>
+<p align="center">
+  <image src="/src/W9.png" alt="Dispositivos ingresados">
+</p>
+Agregamos 3 dispositivos inalámbricos
+<p align="center">
+  <image src="/src/W10.png" alt="Dispositivos ingresados">
+</p>
+<h3>Configuracion de dispositivos inalambricos</h3>
+<h4>Laptop</h4>
+Conectar la antena inalámbrica
+<p align="center">
+  <image src="/src/W11.png" alt="Dispositivos ingresados">
+</p>
+Conectamos los usuarios al dispositivo Wireless Router
+<p align="center">
+  <image src="/src/W12.png" alt="Dispositivos ingresados">
+</p>
+<p align="center">
+  <image src="/src/W13.png" alt="Dispositivos ingresados">
+</p>
+Dispositivo conectado
+<p align="center">
+  <image src="/src/W14.png" alt="Dispositivo conectado">
+</p>
+<h4>Smartphone</h4>
+<p align="center">
+  <image src="/src/W15.png" alt="Smartphone">
+</p>
+<h4>Tablet</h4>
+<p align="center">
+  <image src="/src/W16.png" alt="Tablet">
+</p>
+<h4>Red final</h4>
+<p align="center">
+  <image src="/src/W17.png" alt="Red final">
+</p>
 <h2>Seguridad LAN</h2>
 <h2>Seguridad VLAN</h2>
 <h2>Seguridad WLAN</h2>
