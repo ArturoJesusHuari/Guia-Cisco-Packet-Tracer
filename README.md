@@ -508,9 +508,9 @@ Prueba local
 Se conectan los routers mediantes conexion serial
 <p align="center">
   <image src="/src/WAN1.png" alt="AAA">
-Configuramos las ip de los router y los dispositivos
 </p>
-  <p align="center">
+Configuramos las ip de los router y los dispositivos
+<p align="center">
   <image src="/src/WAN2.png" alt="AAA">
 </p>
     <p align="center">
