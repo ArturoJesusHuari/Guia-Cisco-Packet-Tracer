@@ -503,3 +503,21 @@ Prueba local
 <p align="center">
   <image src="/src/AAA12.png" alt="AAA">
 </p>
+<h2>Red WAN</h2>
+<h3>Configuracion</h3>
+Se conectan los routers mediantes conexion serial
+<p align="center">
+  <image src="/src/WAN1.png" alt="AAA">
+Configuramos las ip de los router y los dispositivos
+</p>
+  <p align="center">
+  <image src="/src/WAN2.png" alt="AAA">
+</p>
+    <p align="center">
+  <image src="/src/WAN3.png" alt="AAA">
+</p>
+Registramos las ip de red
+</p>
+    <p align="center">
+  <image src="/src/WAN4.png" alt="AAA">
+</p>
