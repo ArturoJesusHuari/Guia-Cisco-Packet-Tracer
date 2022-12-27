@@ -406,7 +406,96 @@ Finalmente, la PC al no esta registrada dentro del filtro será desconectada.
   <image src="/src/SWL11.png" alt="Seguridad LAN">
 </p>
 <h2>Protocolo STP</h2>
-
+<h3>Configuracion</h3>
+<p align="center">
+  <image src="/src/STP1.png" alt="STP">
+</p>
+Desactivar el protocolo STP en los tres switches. Mediante el comando <code>no spanning-tree vlan 1</code>
+<pre><code>Switch>enable
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#hostname SW1
+SW1(config)#no spanning-tree vlan 1</code></pre>
+<em>De igual forma en los otros 2 switches.</em><br>
+<h4>Configurar las direcciones IP de las PC</h4>
+<p align="center">
+  <image src="/src/STP2.png" alt="STP">
+</p>
+<p align="center">
+  <image src="/src/STP3.png" alt="STP">
+</p>
+Se encenderan todos los puertos. 
+<p align="center">
+  <image src="/src/STP4.png" alt="STP">
+</p>
+<h4>Prueba de conectividad</h4>
+<p align="center">
+  <image src="/src/STP5.png" alt="STP">
+</p>
+Reactivamos el protocolo STP en los tres switches, con el comando <code>spannig-tree vlan 1</code><br>
+<pre><code>SW1(config)#spanning-tree vlan 1</code></pre>
+<em>De igual forma en los otros 2 switches.</em><br>
+Nuevamente hay conectividad
+<p align="center">
+  <image src="/src/STP6.png" alt="STP">
+</p>
+<p align="center">
+  <image src="/src/STP7.png" alt="STP">
+</p>
 <h2>Seguridad AAA</h2>
-
-<h2>Seguridad WAN</h2>
+<h3>Configuracion</h3>
+<p align="center">
+  <image src="/src/AAA1.png" alt="AAA">
+</p>
+Configurar las IP de los servidores y los Router.
+<p align="center">
+  <image src="/src/AAA2.png" alt="AAA">
+</p>
+<p align="center">
+  <image src="/src/AAA3.png" alt="AAA">
+</p>
+<p align="center">
+  <image src="/src/AAA4.png" alt="AAA">
+</p>
+Verificamos las comunicaciones
+<p align="center">
+  <image src="/src/AAA5.png" alt="AAA">
+</p>
+Configuracion de router. <br>
+<pre><code>Router>enable
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname R1
+R1(config)#enable secret cisco123
+R1(config)#username Arturo password cisco</code></pre>
+Configuracion de servidor Tacacs 
+<p align="center">
+  <image src="/src/AAA6.png" alt="AAA">
+</p>
+Configuracion de servidor Radius 
+<p align="center">
+  <image src="/src/AAA7.png" alt="AAA">
+</p>
+<h4>Configuracion de router</h4>
+<pre><code>R1(config)#AAA new-model
+R1(config)#tacacs-server host 192.168.10.2 key cisco123
+R1(config)#radius-server host 192.168.10.3 key cisco123
+R1(config)#AAA authentication login default group tacacs+ group radius local-case</code></pre>
+Prueba Tacacs
+<p align="center">
+  <image src="/src/AAA8.png" alt="AAA">
+</p>
+Prueba Radius
+<p align="center">
+  <image src="/src/AAA9.png" alt="AAA">
+</p>
+<p align="center">
+  <image src="/src/AAA10.png" alt="AAA">
+</p>
+Prueba local
+<p align="center">
+  <image src="/src/AAA11.png" alt="AAA">
+</p>
+<p align="center">
+  <image src="/src/AAA12.png" alt="AAA">
+</p>
