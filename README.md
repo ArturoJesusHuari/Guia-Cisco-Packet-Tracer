@@ -443,6 +443,10 @@ Nuevamente hay conectividad
   <image src="/src/STP7.png" alt="STP">
 </p>
 <h2>Seguridad AAA</h2>
+<h3>Concepto</h3>
+AAA significa Autenticación, Autorización y Contabilidad, y proporciona el marco para configurar el control de acceso en un dispositivo de red. 
+<h3>Servidor</h3>
+Con el método basado en el servidor, el enrutador accede a un servidor central AAA. El servidor AAA contiene los nombres de usuario y contraseñas de todos los usuarios. El router AAA usa el protocolo de sistema de control de acceso del controlador de acceso a terminales (TACACS +) o el protocolo de servicio de autenticación remota para usuarios de entrada telefónica (RADIUS) para comunicarse con el servidor de AAA. 
 <h3>Configuracion</h3>
 <p align="center">
   <image src="/src/AAA1.png" alt="AAA">
